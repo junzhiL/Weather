@@ -108,8 +108,9 @@
                 android:text="湿度:57%"
                 android:textColor="@android:color/white"
                 android:textSize="15.0sp" />
+            <!--温度-->
             <TextView
-                android:id="@+id/temper"
+                android:id="@+id/wendu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/humidity"
