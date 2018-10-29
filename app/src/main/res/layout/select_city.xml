@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/CurrentCity"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:background="#ffcd2626">
@@ -32,5 +33,21 @@
             android:gravity="center"/>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CurrentCity">
+
+        <ListView
+            android:id="@+id/title_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+        </ListView>
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

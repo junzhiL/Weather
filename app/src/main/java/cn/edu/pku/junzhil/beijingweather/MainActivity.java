@@ -31,6 +31,7 @@ import cn.edu.pku.junzhil.util.NetUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private static final int UPDATE_TODAY_WEATHER = 1;
+//    private String updateCityCode;
     private ImageView mUpateBtn;
     private ImageView mCitySelect;
     private TextView cityTv,timeTv,wenduTv,humidityTv,weekTv,pmDataTv,pmQualityTv,temperatureTv,climateTv,windTv,city_name_Tv;
@@ -66,6 +67,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mCitySelect = (ImageView) findViewById(R.id.title_city_manager);
         mCitySelect.setOnClickListener(this);
         initView();
+
+//        updateCityCode = getIntent().getStringExtra("citycode");
+//        if (updateCityCode!="-1"){
+//            updateTodayWeather(updateCityCode);
+//        }
     }
 
     void initView(){
@@ -109,7 +115,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         climateTv.setText(todayWeather.getType());
         windTv.setText("风力"+todayWeather.getFengli());
         if(todayWeather.getPm25()!=null){
-            int pm25 = Integer.parseInt(todayWeather.getPm25());
+            //int pm25 = Integer.parseInt(todayWeather.getPm25());
+            int pm25 = 0;
+            if (todayWeather.getPm25()!= null){
+                pm25 = Integer.parseInt(todayWeather.getPm25());
+            }
             if(pm25<=50){
                 pmImg.setImageResource(R.drawable.biz_plugin_weather_0_50);
             }else if (pm25>=51 && pm25<=100){
@@ -197,6 +207,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         if (view.getId() == R.id.title_city_manager){
             Intent i = new Intent(this, SelectCity.class);
+            i.putExtra("city",cityTv.getText());
             //startActivity(i);
             startActivityForResult(i,1);
         }
