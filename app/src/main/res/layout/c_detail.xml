@@ -17,6 +17,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/list_city_name"
         android:textSize="20sp"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/white"
+    />
 
 </RelativeLayout>

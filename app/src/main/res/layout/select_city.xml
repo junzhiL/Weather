@@ -34,10 +34,26 @@
 
     </RelativeLayout>
 
+
+    <cn.edu.pku.junzhil.view.ClearEditText
+        android:id="@+id/search_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4.0dip"
+        android:hint="搜索全国城市（中文）"
+        android:drawableLeft="@drawable/magnifying_glass"
+        android:drawablePadding="6.0dip"
+        android:singleLine="true"
+        android:background="@drawable/contact_search_box_edittext_keyword_background"
+        android:textSize="15.0sp"
+        android:textColor="#ff000000"
+        android:textColorHint="#ffcccccc"
+        android:layout_below="@id/CurrentCity"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/CurrentCity">
+        android:layout_below="@+id/search_city">
 
         <ListView
             android:id="@+id/title_list"
